@@ -6,6 +6,29 @@
     margin-bottom: 10rem;
 }
 
+.landing {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.landing-img {
+    margin: 0 auto;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    width: 150px;
+    height: 150px;
+}
+
+.landing-header {
+    font-size: 3rem;
+    font-family: 'Staatliches', cursive;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px #adadad;
+    text-align: center;
+}
+
+
 @media only screen and (max-width: 600px) and (min-width: 321px) {
 
     .card-container {
