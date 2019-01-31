@@ -5,7 +5,8 @@ import landingImg from "../landing.png";
 
 class CardContainer extends React.Component {
     render() {
-        console.log(`cardcontainer.js: ${this.props.results}`);
+        console.log("Thanks for checking out my app! I built this using the OpenWeatherMap API and the React.js library. Please check out my github (https://github.com/chrissybelle) for other projects and feel free to add me on LinkedIn (https://linkedin.com/in/christabellec/)!");
+        console.log("-cbelle");
         return (
             this.props.results[1] ?
 
@@ -18,7 +19,7 @@ class CardContainer extends React.Component {
                 :
 
                 <div className="landing">
-                    <img className="landing-img" src={landingImg} alt="weather_search"/>
+                    <img className="landing-img" src={landingImg} alt="weather_search" />
                     <h1 className="landing-header">Weather Search</h1>
                 </div>
 

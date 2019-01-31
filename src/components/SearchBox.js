@@ -16,12 +16,10 @@ class SearchBox extends React.Component {
         this.setState({
             zipcode: input
         })
-        console.log(`zipcode entered: ${this.state.zipcode}`);
     }
 
     handleClick(e) {
         this.props.searchWeather(this.state.zipcode);
-        console.log(`searching.. ${this.state.zipcode}`);
         e.preventDefault();
 
     }

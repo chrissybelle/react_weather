@@ -5,17 +5,11 @@ class Card extends React.Component {
 
     render() {
 
-        console.log(`card.js: ${this.props.weather.temp}`);
         const extractedDate = this.props.weather.id.slice(0, 11); //removes timestamp from API data
-        console.log(`extracted: ${extractedDate}`);
         const formattedDate = extractedDate.slice(5, 10) + "-" + extractedDate.slice(0, 5).slice(0, -1); //reformats date from YYYY-MM-DD to MM-DD-YYYY
-        console.log(`formatted: ${formattedDate}`);
         const weatherDate = new Date(formattedDate);
-        console.log(`WEATHER DAY ${weatherDate}`);
         const daysOfTheWeek = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
         let weatherDay = daysOfTheWeek[weatherDate.getDay()];
-        console.log(`final day: ${weatherDay}`);
-
         let tempFahrenheit = this.props.weather.temp;
         let tempCelsius = Math.round((tempFahrenheit - 32) * 5 / 9);
 
@@ -37,26 +31,6 @@ class Card extends React.Component {
                     <p className="general-description">{this.props.weather.weather}</p>
                     <p className="detail-description">{this.props.weather.details}</p>
                 </div>
-
-                {/* {this.props.dayOfTheWeek.map(day => {
-                    return (
-                        <div>
-                            <div className="card-day" key={day}>
-                                <p className={day}>{day}</p>
-                            </div>
-                            <div className="card-high">
-                                {this.props.tempHigh.map(temp => {
-                                    return <p className={`${day}-high`} key={`${day}-high`}>{temp}</p>
-                                })}
-                            </div>
-                            <div className="card-low">
-                                {this.props.tempLow.map(temp => {
-                                    return <p className={`${day}-low`} key={`${day}-low`}>{temp}</p>
-                                })}
-                            </div>
-                        </div>
-                    )
-                })} */}
             </div>
         );
     }

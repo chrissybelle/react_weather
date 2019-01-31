@@ -6,7 +6,6 @@ const Weather = {
             .then(res => res.json())
             .then(results => {
                 if (results.list) {
-                    console.log(`weather.js results: ${results.list}`);
                     return results.list.map(result => {
                         return {
                             id: result.dt_txt,
