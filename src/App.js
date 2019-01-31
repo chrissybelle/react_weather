@@ -15,22 +15,16 @@ class App extends React.Component {
 
     searchWeather(input) {
         Weather.search(input).then(results => {
-
             let dailyResults = [];
-
             function getDailyResults(array) {
                 dailyResults = array.filter((e, i) => i % 8 === 7);
             }
-
             getDailyResults(results);
-
             this.setState({
                 results: dailyResults
             })
-            console.log(`app.js results: ${this.state.results}`);
         });
     }
-
 
     render() {
         return (
@@ -41,6 +35,5 @@ class App extends React.Component {
         );
     }
 };
-
 
 export default App;

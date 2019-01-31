@@ -13,10 +13,8 @@ class Card extends React.Component {
         let tempFahrenheit = this.props.weather.temp;
         let tempCelsius = Math.round((tempFahrenheit - 32) * 5 / 9);
 
-
         return (
             <div className="card-day">
-
                 <div className="card-header">
                     <h4 className="weather-day">{weatherDay}</h4>
                     <h6 className="weather-date">{formattedDate}</h6>
