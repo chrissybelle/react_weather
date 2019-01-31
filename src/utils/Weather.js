@@ -2,7 +2,7 @@ const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
 const Weather = {
     search(zipCode) {
-        return fetch(`http://api.openweathermap.org/data/2.5/forecast?zip=${zipCode}&units=imperial&APPID=${API_KEY}`)
+        return fetch(`https://api.openweathermap.org/data/2.5/forecast?zip=${zipCode}&units=imperial&APPID=${API_KEY}`)
             .then(res => res.json())
             .then(results => {
                 if (results.list) {
