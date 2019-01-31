@@ -15,18 +15,29 @@ class Card extends React.Component {
         const daysOfTheWeek = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
         let weatherDay = daysOfTheWeek[weatherDate.getDay()];
         console.log(`final day: ${weatherDay}`);
-       
 
+        let tempFahrenheit = this.props.weather.temp;
+        let tempCelsius = Math.round((tempFahrenheit - 32) * 5 / 9);
 
 
         return (
             <div className="card-day">
-                <p>{formattedDate}</p>
-                <p>{weatherDay}</p>
-                <p>{this.props.weather.temp}°F</p>
-                <img src={process.env.PUBLIC_URL + "/icons/" + this.props.weather.icon + ".png"} alt={this.props.weather.weather} />
-                <p>{this.props.weather.weather}</p>
-                <p>{this.props.weather.details}</p>
+
+                <div className="card-header">
+                    <h4 className="weather-day">{weatherDay}</h4>
+                    <h6 className="weather-date">{formattedDate}</h6>
+                </div>
+
+                <div className="temp">
+                    <span className="temp-f">{tempFahrenheit}°F</span> | <span className="temp-c">{tempCelsius}°C</span>
+                </div>
+
+                <div className="weather-description">
+                    <img className="weather-icons" src={process.env.PUBLIC_URL + "/icons/" + this.props.weather.icon + ".png"} alt={this.props.weather.weather} />
+                    <p className="general-description">{this.props.weather.weather}</p>
+                    <p className="detail-description">{this.props.weather.details}</p>
+                </div>
+
                 {/* {this.props.dayOfTheWeek.map(day => {
                     return (
                         <div>

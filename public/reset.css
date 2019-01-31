@@ -41,3 +41,18 @@ table {
  border-collapse: collapse;
  border-spacing: 0;
 }
+
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5rem;
+    background-color: #36453B;
+    color: #C2C1A5;
+    font-size: 10px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding-top: 2rem;
+}
