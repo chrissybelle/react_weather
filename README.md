@@ -7,5 +7,6 @@ Uses OpenWeatherMap API.
 Built with React.js
 
 
-to-do: styling
+![weatherapp](./weather_app.png)
 
+![weatherapp](./weather_app_forecast.png)
