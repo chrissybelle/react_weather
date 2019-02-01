@@ -22,7 +22,7 @@ const Weather = {
                 }
             })
             .catch((error) => {
-                console.log(error, "catch the hoop");
+                console.log(error);
             });
     },
 
@@ -36,7 +36,7 @@ const Weather = {
                 }
             })
             .catch((error) => {
-                console.log(error, "catch the hoop");
+                console.log(error);
             });
     }
 }
