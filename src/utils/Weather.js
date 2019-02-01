@@ -1,8 +1,9 @@
-const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+const WEATHER_API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+const ZIP_API_KEY = process.env.REACT_APP_ZIPCODE_API_KEY;
 
 const Weather = {
     search(zipCode) {
-        return fetch(`https://api.openweathermap.org/data/2.5/forecast?zip=${zipCode}&units=imperial&APPID=${API_KEY}`)
+        return fetch(`https://api.openweathermap.org/data/2.5/forecast?zip=${zipCode}&units=imperial&APPID=${WEATHER_API_KEY}`)
             .then(res => res.json())
             .then(results => {
                 if (results.list) {
@@ -15,6 +16,16 @@ const Weather = {
                             icon: result.weather[0].icon
                         }
                     })
+                } 
+            });
+    },
+    
+    getLocation(zipcode) {
+        return fetch(`https://cors-anywhere.herokuapp.com/https://www.zipcodeapi.com/rest/${ZIP_API_KEY}/info.json/${zipcode}/degrees`)
+            .then(res => res.json())
+            .then(results => {
+                if (results) {
+                    return results;
                 } 
             });
     }

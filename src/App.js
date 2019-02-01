@@ -7,7 +7,9 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            results: []
+            results: [],
+            searchedState: "",
+            searchedCity: ""
         }
         this.searchWeather = this.searchWeather.bind(this);
     }
@@ -23,13 +25,20 @@ class App extends React.Component {
                 results: dailyResults
             })
         });
+        Weather.getLocation(input).then(results => {
+            this.setState({
+                searchedState: results.state,
+                searchedCity: results.city
+            })
+
+        });
     }
 
     render() {
         return (
             <div className="main-content">
                 <SearchBox searchWeather={this.searchWeather} />
-                <CardContainer results={this.state.results} />
+                <CardContainer results={this.state.results} searchedCity={this.state.searchedCity} searchedState={this.state.searchedState}/>
             </div>
         );
     }

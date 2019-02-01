@@ -42,6 +42,14 @@
     text-align: center;
 }
 
+.weather-location {
+    font-size: 2.5rem;
+    color:#C8D5B9;
+    text-shadow: 1px 1px #696D7D;
+    font-family: 'Staatliches', cursive;
+    letter-spacing: 3px;
+    margin-left: 3rem;
+}
 
 @media only screen and (max-width: 600px) and (min-width: 321px) {
 
