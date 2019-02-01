@@ -15,21 +15,24 @@ class SearchBox extends React.Component {
         let input = e.target.value;
         this.setState({
             zipcode: input
-        })
+        });
     }
 
     handleClick(e) {
-        this.props.searchWeather(this.state.zipcode);
         e.preventDefault();
-
+        let search = this.state.zipcode;
+        this.props.searchWeather(search);
+        this.setState({
+            zipcode: "zipcode"
+        });
     }
 
     render() {
         return (
-            <div className="searchbox">
-                <input className="searchbox-input" type="text" placeholder={this.state.zipcode} onChange={this.handleChange}></input>
+            <form className="searchbox">
+                <input className="searchbox-input" type="text" placeholder={this.state.zipcode} pattern="^\d{5}$" onChange={this.handleChange} required></input>
                 <button className="searchbox-button" onClick={this.handleClick}>Search</button>
-            </div>
+            </form>
         );
     }
 };

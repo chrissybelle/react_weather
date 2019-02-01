@@ -2,7 +2,6 @@ import React from "react";
 import SearchBox from "./components/SearchBox";
 import CardContainer from "./components/CardContainer";
 import Weather from "./utils/Weather";
-import "./app.css";
 
 class App extends React.Component {
     constructor(props) {

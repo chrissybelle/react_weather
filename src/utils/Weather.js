@@ -15,7 +15,7 @@ const Weather = {
                             icon: result.weather[0].icon
                         }
                     })
-                }
+                } 
             });
     }
 }
