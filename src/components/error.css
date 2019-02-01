@@ -1,0 +1,21 @@
+.error-warning {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.error-img {
+    margin: 0 auto;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    width: 150px;
+    height: 150px;
+}
+
+.error-header {
+    font-size: 2rem;
+    font-family: 'Staatliches', cursive;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px #adadad;
+    text-align: center;
+}

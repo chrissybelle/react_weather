@@ -51,28 +51,35 @@
     margin-left: 3rem;
 }
 
-@media only screen and (max-width: 600px) and (min-width: 321px) {
+@media only screen and (max-width: 750px) and (min-width: 321px) {
 
     .card-container {
         display: flex;
         flex-flow: wrap;
-        justify-content: space-around;
+        justify-content: center;
         margin: 1rem auto;
-        width: 18rem;
         margin-bottom: 10rem;
     }
-    
+    .weather-location {
+        font-size: 2rem;
+        text-align: center;
+        margin: 0.5rem;
+    }
 }
 
 @media only screen and (max-width: 320px) {
 
     .card-container {
         display: flex;
-        flex-flow: column;
-        justify-content: space-around;
-        margin: 1rem 10rem;
-        width: 18rem;
+        flex-flow: wrap;
+        justify-content: center;
+        margin: 1rem auto;
         margin-bottom: 10rem;
     }
     
+    .weather-location {
+        font-size: 2rem;
+        text-align: center;
+        margin: 0.5rem;
+    }
 }
