@@ -1,4 +1,5 @@
 import React from "react";
+import Slide from "react-reveal/Slide";
 import Card from "./Card";
 import "./cardContainer.css";
 import landingImg from "../landing.png";
@@ -20,13 +21,15 @@ class CardContainer extends React.Component {
                             <div className="search-location">
                                 <h1 className="weather-location">Weather forecast for {this.props.searchedCity}, {this.props.searchedState}:</h1>
                             </div>
-
+                            <Slide left delay={1000}>
                             <div className="card-container">
 
                                 {this.props.results.map(result => {
                                     return <Card weather={result} key={result.id} />
                                 })}
                             </div>
+                            </Slide>
+
                         </div>
                         :
                         <div className="landing">

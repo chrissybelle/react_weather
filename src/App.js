@@ -23,9 +23,7 @@ class App extends React.Component {
 
     searchWeather(input) {
         Weather.search(input).then(results => {
-            console.log(`app.js ${results}`);
             if (results !== "404") {
-                console.log("searching...");
                 let dailyResults = [];
                 function getDailyResults(array) {
                     dailyResults = array.filter((e, i) => i % 8 === 7);
@@ -42,9 +40,7 @@ class App extends React.Component {
             }
         });
         Weather.getLocation(input).then(results => {
-            console.log(`zip results ${results}`);
             if (results.error_code !== 404) {
-                console.log("locating...");
                 this.setState({
                     searchedState: results.state,
                     searchedCity: results.city

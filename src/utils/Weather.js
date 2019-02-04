@@ -6,7 +6,6 @@ const Weather = {
         return fetch(`https://api.openweathermap.org/data/2.5/forecast?zip=${zipCode}&units=imperial&APPID=${WEATHER_API_KEY}`)
             .then(res => res.json())
             .then(results => {
-                console.log(`results list ${results}`);
                 if (results.list) {
                     return results.list.map(result => {
                         return {
@@ -30,7 +29,6 @@ const Weather = {
         return fetch(`https://cors-anywhere.herokuapp.com/https://www.zipcodeapi.com/rest/${ZIP_API_KEY}/info.json/${zipcode}/degrees`)
             .then(res => res.json())
             .then(results => {
-                console.log(`weather.js zip results ${results.error_code}`);
                 if (results) {
                     return results;
                 }
